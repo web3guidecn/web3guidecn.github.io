@@ -36,7 +36,7 @@ params:
   description: 面向中文用户的 OKX、Binance 注册下载、安全核验与账户操作教程。
   author: 链上新手指南编辑部
   heroImage: /images/safe-onboarding.png
-  ga4Id: ""
+  ga4Id: "G-KLTZ1DVBQ0"
   disclosure: 本站为独立第三方教程站，不代表任何交易平台。部分链接为推广链接，服务与可用性以目标平台实际页面为准。
 
 menus:
