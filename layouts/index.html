@@ -3,10 +3,44 @@
   <div class="shell hero-content">
     <p class="eyebrow">数字资产入门与账户安全</p>
     <h1>{{ site.Title }}</h1>
-    <p class="hero-copy">从注册、下载到真假入口核验，把复杂步骤拆成能照着完成的中文教程。</p>
+    <p class="hero-copy">欧易 OKX 与 Binance 币安的注册、Android 下载和账户安全中文教程，把复杂步骤拆成能照着完成的操作。</p>
     <div class="hero-actions">
-      <a class="button button-primary" href="{{ "/okx/" | relURL }}">浏览 OKX 教程</a>
-      <a class="button button-light" href="{{ "/binance/" | relURL }}">浏览 Binance 教程</a>
+      <a class="button button-primary" href="#platform-access">查看注册与下载入口</a>
+      <a class="button button-light" href="{{ "/okx/registration-guide/" | relURL }}">阅读注册教程</a>
+    </div>
+  </div>
+</section>
+
+{{- $okx := index site.Data.links "okx" -}}
+{{- $binance := index site.Data.links "binance" -}}
+<section class="access-band" id="platform-access" aria-labelledby="platform-access-title">
+  <div class="shell access-shell">
+    <div class="access-heading">
+      <p class="eyebrow">合作渠道入口</p>
+      <h2 id="platform-access-title">欧易与币安注册下载</h2>
+      <p>选择目标平台和操作类型。填写信息或安装应用前，请再次核验浏览器地址、安全提示和页面显示的平台名称。</p>
+    </div>
+    <div class="access-grid">
+      <article class="access-item access-okx">
+        <p class="access-index">01 / OKX</p>
+        <h3>欧易 OKX</h3>
+        <p>打开合作渠道注册页面，或获取 Android 安装包。</p>
+        <div class="access-actions">
+          <a class="button button-primary" href="{{ $okx.h5 }}" rel="sponsored nofollow noopener" target="_blank" data-cta-brand="okx" data-cta-type="h5" data-cta-position="homepage_access">欧易注册</a>
+          <a class="button button-secondary" href="{{ $okx.apk }}" rel="sponsored nofollow noopener" data-cta-brand="okx" data-cta-type="apk" data-cta-position="homepage_access">Android 下载</a>
+        </div>
+        <small>{{ $okx.disclosure }}。本站不保存账号、密码、验证码或身份资料。</small>
+      </article>
+      <article class="access-item access-binance">
+        <p class="access-index">02 / BINANCE</p>
+        <h3>Binance 币安</h3>
+        <p>打开合作渠道注册页面，或获取 Android 安装包。</p>
+        <div class="access-actions">
+          <a class="button button-binance" href="{{ $binance.h5 }}" rel="sponsored nofollow noopener" target="_blank" data-cta-brand="binance" data-cta-type="h5" data-cta-position="homepage_access">币安注册</a>
+          <a class="button button-secondary" href="{{ $binance.apk }}" rel="sponsored nofollow noopener" data-cta-brand="binance" data-cta-type="apk" data-cta-position="homepage_access">Android 下载</a>
+        </div>
+        <small>{{ $binance.disclosure }}。本站不保存账号、密码、验证码或身份资料。</small>
+      </article>
     </div>
   </div>
 </section>
@@ -39,4 +73,3 @@
   </div>
 </section>
 {{ end }}
-
