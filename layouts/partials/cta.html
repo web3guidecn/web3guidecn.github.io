@@ -1,0 +1,19 @@
+{{- $brandKey := .brand -}}
+{{- $kind := .kind | default "register" -}}
+{{- $position := .position | default "article_end" -}}
+{{- $brand := index site.Data.links $brandKey -}}
+{{- if $brand -}}
+<aside class="cta-block" aria-label="{{ $brand.name }}下一步">
+  <p class="cta-eyebrow">下一步</p>
+  <h2>{{ if eq $kind "download" }}准备安装 {{ $brand.name }}？{{ else }}准备注册 {{ $brand.name }}？{{ end }}</h2>
+  <p>{{ if eq $kind "download" }}根据设备选择入口。安装前请核验页面域名、应用名称与签名信息。{{ else }}通过合作渠道打开注册页面，填写信息前先核验目标页面与浏览器安全提示。{{ end }}</p>
+  <div class="cta-actions">
+    <a class="button button-primary" href="{{ $brand.h5 }}" rel="sponsored nofollow noopener" target="_blank" data-cta-brand="{{ $brandKey }}" data-cta-type="h5" data-cta-position="{{ $position }}">打开注册入口</a>
+    {{ if eq $kind "download" }}
+      <a class="button button-secondary" href="{{ $brand.apk }}" rel="sponsored nofollow noopener" data-cta-brand="{{ $brandKey }}" data-cta-type="apk" data-cta-position="{{ $position }}">下载 Android 安装包</a>
+    {{ end }}
+  </div>
+  <small>{{ $brand.disclosure }}。本站不保存账号、密码、验证码或身份资料。</small>
+</aside>
+{{- end -}}
+

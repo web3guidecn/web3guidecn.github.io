@@ -1,0 +1,17 @@
+{{ define "main" }}
+<header class="page-header">
+  <div class="shell narrow">
+    <p class="eyebrow">教程专题</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</header>
+<section class="section-block section-compact">
+  <div class="shell article-grid">
+    {{ range .Pages.ByDate.Reverse }}
+      {{ partial "article-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+

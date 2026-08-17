@@ -1,0 +1,55 @@
+baseURL: https://web3guidecn.github.io/
+languageCode: zh-CN
+defaultContentLanguage: zh-cn
+title: 链上新手指南
+enableRobotsTXT: true
+enableGitInfo: true
+summaryLength: 80
+
+pagination:
+  pagerSize: 12
+
+permalinks:
+  page:
+    okx: /okx/:slug/
+    binance: /binance/:slug/
+    security: /security/:slug/
+
+outputs:
+  home:
+    - HTML
+    - RSS
+
+sitemap:
+  changeFreq: weekly
+  priority: 0.5
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+
+params:
+  description: 面向中文用户的 OKX、Binance 注册下载、安全核验与账户操作教程。
+  author: 链上新手指南编辑部
+  heroImage: /images/safe-onboarding.png
+  ga4Id: ""
+  disclosure: 本站为独立第三方教程站，不代表任何交易平台。部分链接为推广链接，服务与可用性以目标平台实际页面为准。
+
+menus:
+  main:
+    - name: OKX 教程
+      pageRef: /okx
+      weight: 10
+    - name: Binance 教程
+      pageRef: /binance
+      weight: 20
+    - name: 安全核验
+      pageRef: /security
+      weight: 30
+    - name: 关于本站
+      pageRef: /about
+      weight: 40

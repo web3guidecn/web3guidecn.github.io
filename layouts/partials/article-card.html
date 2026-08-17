@@ -1,0 +1,10 @@
+<article class="article-card">
+  <p class="card-kicker">{{ .CurrentSection.Title | default "实用教程" }}</p>
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p>{{ .Description | default .Summary | plainify | truncate 105 }}</p>
+  <div class="card-meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    <a href="{{ .RelPermalink }}" aria-label="阅读：{{ .Title }}">阅读全文 →</a>
+  </div>
+</article>
+

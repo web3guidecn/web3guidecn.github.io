@@ -1,0 +1,34 @@
+{{ define "main" }}
+<article class="article-shell">
+  <header class="article-header shell narrow">
+    <nav class="breadcrumbs" aria-label="面包屑">
+      <a href="{{ site.Home.RelPermalink }}">首页</a><span>/</span>
+      {{ with .CurrentSection }}<a href="{{ .RelPermalink }}">{{ .Title }}</a><span>/</span>{{ end }}
+      <span aria-current="page">本文</span>
+    </nav>
+    <p class="eyebrow">{{ .CurrentSection.Title | default "实用教程" }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="article-description">{{ .Description }}</p>
+    <div class="article-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">发布于 {{ .Date.Format "2006-01-02" }}</time>
+      <span>更新于 {{ .Lastmod.Format "2006-01-02" }}</span>
+      <span>约 {{ .ReadingTime }} 分钟</span>
+    </div>
+  </header>
+  <div class="article-layout shell">
+    <div class="article-content">
+      {{ .Content }}
+      {{ with .Params.cta }}
+        {{ partial "cta.html" (dict "brand" .brand "kind" .kind "position" "article_end") }}
+      {{ end }}
+    </div>
+    {{ if .TableOfContents }}
+    <aside class="toc" aria-label="本文目录">
+      <strong>本文目录</strong>
+      {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+  </div>
+</article>
+{{ end }}
+

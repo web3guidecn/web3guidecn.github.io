@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section class="hero" style="--hero-image: url('{{ site.Params.heroImage | relURL }}')">
+  <div class="shell hero-content">
+    <p class="eyebrow">数字资产入门与账户安全</p>
+    <h1>{{ site.Title }}</h1>
+    <p class="hero-copy">从注册、下载到真假入口核验，把复杂步骤拆成能照着完成的中文教程。</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="{{ "/okx/" | relURL }}">浏览 OKX 教程</a>
+      <a class="button button-light" href="{{ "/binance/" | relURL }}">浏览 Binance 教程</a>
+    </div>
+  </div>
+</section>
+
+<section class="topic-band">
+  <div class="shell topic-grid">
+    <a class="topic-link topic-okx" href="{{ "/okx/" | relURL }}">
+      <span>01</span><strong>OKX 教程</strong><small>注册、下载、认证与排障</small>
+    </a>
+    <a class="topic-link topic-binance" href="{{ "/binance/" | relURL }}">
+      <span>02</span><strong>Binance 教程</strong><small>开户、App 与账户安全</small>
+    </a>
+    <a class="topic-link topic-security" href="{{ "/security/" | relURL }}">
+      <span>03</span><strong>安全核验</strong><small>识别假入口与高风险操作</small>
+    </a>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="shell">
+    <div class="section-heading">
+      <div><p class="eyebrow">从真实任务开始</p><h2>最新教程</h2></div>
+      <p>每篇文章只解决一个完整问题，并把注册或下载入口放在对应操作步骤。</p>
+    </div>
+    <div class="article-grid">
+      {{ range first 6 (where site.RegularPages "Section" "in" (slice "okx" "binance" "security")) }}
+        {{ partial "article-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
